@@ -1,0 +1,6 @@
+Der Name der Package für das project sollte sein:
+"de.hs.tpe.team1-5.ex1-btree"
+(Leider war das intern nicht möglich weil ich erst 3 Tage vor abgabe erfahren habe welche Nummer mein Team bei ihnen hat.) Es gibt eine NamensKonvention die besagt das alle Packagenamen klein geschrieben werden um sie von Klassen Namen zu unterscheiden. 
+
+Der Name fängt sehr global oder grob an, und wird immer spezifischer in den unterordnern. Das ist im prinzip wie eine URL nur anders herumm. 
+Solange sich alle Menschen einer Firma daran halten oder alle TeilNehmer diese Kurses nicht versuchen ins selbe reposatory ein Dokument mit dem selben Namen zu pushen ins selbe reposatory sollte es funktionieren. Es bedeutet das Jeder in seinem Arbeitsbereich oder Team "bleibt"(nicht auseversehn in andere reposatories pushed oder die Files anderer Teams überschreibt).
