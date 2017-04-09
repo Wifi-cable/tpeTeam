@@ -8,6 +8,7 @@ public class MainMenue {
 			
 			public static void main(String[] args) {
 				tree = init();
+				tree.root=tree;
 				do{
 				}while(execute()!=0);
 			}
@@ -16,7 +17,13 @@ public class MainMenue {
 				System.out.println("Please choose further options: ");
 				System.out.println("Option 1: Insert single values");
 				System.out.println("Option 2: Insert values from file");
-				System.out.println("Option 3: Print the tree");
+				System.out.println("Option 3: Search for value");
+				System.out.println("Option 4: size");
+				System.out.println("Option 5: hight");
+				System.out.println("Option 6: Find the biggest Value");
+				System.out.println("Option 7: Find the smalest Value");
+				System.out.println("Option 8: is the tree empty");
+				System.out.println("Option 9: Print the tree");
 				System.out.println("Option 0: Exit");
 				Scanner Ui = new Scanner(System.in); 
 				System.out.print("Please enter your chosen Option: ");
@@ -50,7 +57,33 @@ public class MainMenue {
 							System.out.println("Errorr 404 file not found!");
 						}
 						return 2;
-				case 3:
+				case 3: System.out.print("Please enter a vlaue: ");
+					Scanner searchint = new Scanner(System.in);
+					if (tree.contains(searchint.nextInt())){
+						System.out.println("Found Value!");
+					}
+					else{
+						System.out.println("Sorry, not found :-(");
+					}
+					return 3;
+				case 4: System.out.println("Size is: "+tree.size());
+					return 4;
+				case 5: System.out.println("The tree is "+ (tree.height() + 1) +" high.");
+					return 5;
+				case 6: System.out.println("The Biggest Value is: "+tree.getMax());
+					return 6;
+				case 7: System.out.println("The Smalest Value is: "+tree.getMin());
+					return 7;
+				case 8: 
+				if (tree.ISempty()){
+					System.out.println("Sorry, the tree is empty");
+				}
+				else{
+					System.out.println("You have a (not empty) tree");
+				}
+				return 8;
+					
+				case 9:
 					System.out.println("---------Submenu---------");
 					System.out.println("Option 1: print in Preorder");
 					System.out.println("Option 2: print in Inorder");
@@ -70,7 +103,7 @@ public class MainMenue {
 							break;
 					default: System.out.println("Please enter a valid option!");
 					}
-					return 3;
+					return 9;
 				
 				
 				

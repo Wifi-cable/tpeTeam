@@ -315,15 +315,23 @@ public class BtreeNode implements Btree{
 				}
 				
 				public boolean contains(Integer element){
-					
+					System.out.println("contains("+ element +"...");
 					boolean content;
+					if((getParent()==null)&&(isLeaf())){
+						content=isDuplicate(element);
+						
+					}
+					else{
+					
 					if (insertSearch(element)!=null){
 						content=false;
+						System.out.println("false");
 					}
 					else{
 						content=true;
+						System.out.println("true");
 					}
-
+					}
 					return content;
 					}//
 				
@@ -407,7 +415,7 @@ public class BtreeNode implements Btree{
 
 				}
 			
-				public  Integer[]read(String Filename){	// untested by me
+				public  String read(String Filename){	// untested by me
 					String dates="";//places file into an array,
 					if (MakeItSimple.isFilePresent(Filename) == true) {
 						Object file = MakeItSimple.openInputFile(Filename);
@@ -419,23 +427,23 @@ public class BtreeNode implements Btree{
 						}
 		
 						MakeItSimple.closeInputFile(file);
-						return convert(dates);
+						return dates;
 					}else{
-						Integer[] fail = new Integer[1];
-						fail[0]=0;
-						return fail;
+						return "";
 
 					}
 			}
 
-				public  Integer[] convert(String date) {	// untested by me
+				public  boolean convert(String date) {	// untested by me
 					String[] toConvert = date.split(" ");
+					int val;
 					Integer[] data = new Integer[toConvert.length];
 					for (int i = 0; i < data.length; i++) {
-						data[i] = Integer.parseInt(toConvert[i]);
+						val = Integer.parseInt(toConvert[i]);
+						root.insert(val);
+						System.out.println("got "+ val +"");
 					}
-					// System.out.println(Arrays.toString(data));
-					return data;
+					return true;
 				}
 				/*sets a pointer from the child to the parent, so that the tree can be traversed from leafs to root
 				or bottom to top too.
@@ -528,12 +536,32 @@ public class BtreeNode implements Btree{
 						}
 						public boolean insert(String filename) {
 							// TODO Auto-generated method stub
-							System.out.println("Not implemented yet...");
-							return false;
+							
+							String dates=read(filename);
+
+							
+							//places file into an array,
+							convert(dates);
+							return true;
 						}
 						public void printLevelorder() {
-							// TODO Auto-generated method stub
-							print(0);
+							
+								String spacer= "";// for graphical representation place root node in center
+								int spaceCount=40;
+								for (int i=0; i<=this.height(); i++){
+										spacer= "";
+										for (int k= 0; k<spaceCount; k++){
+											spacer=spacer+" ";
+										}
+										spaceCount = spaceCount - (spaceCount/2);	//next level reduce spaces by half
+										System.out.print(spacer);
+								    System.out.print("Level- " + i + ": ");
+									this.print(i);
+									System.out.println();
+								}
+								System.out.println("---------------------------------------------------------------------------------------------");
+								System.out.println("");
+						//	print(1);
 						}
 						public void printPostorder() {
 							// TODO Auto-generated method stub

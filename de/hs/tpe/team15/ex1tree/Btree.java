@@ -2,7 +2,7 @@ package de.hs.tpe.team15.ex1tree;
 
 	public interface Btree{
 
-				//int max;
+				BtreeNode root=null;
 			
 		//		int maximum;//the actual lenght of both arrays
 
