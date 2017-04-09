@@ -127,9 +127,7 @@ public class Btree {
 	}
 
 	public BtreeNode insertSeach(int key){
-//		BtreeNode theChild=new BtreeNode(m);
-//		theChild= root.insertSearch(key);
-//		return theChild;	// winds up being null.
+
 		return root.insertSearch(key);	// result is the same
 	}
 
