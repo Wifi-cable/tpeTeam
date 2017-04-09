@@ -4,7 +4,7 @@ import gdi.MakeItSimple;
 
 //import hs.tpe.baltt1.BtreeNode;
 
-public class BtreeNode implements Btree{
+public class BtreeNode{
 
 			int max;
 			Integer val[];// array of values
@@ -415,36 +415,6 @@ public class BtreeNode implements Btree{
 
 				}
 			
-				public  String read(String Filename){	// untested by me
-					String dates="";//places file into an array,
-					if (MakeItSimple.isFilePresent(Filename) == true) {
-						Object file = MakeItSimple.openInputFile(Filename);
-		
-						while (MakeItSimple.isEndOfInputFile(file) == false) {
-		
-							dates +=MakeItSimple.readLine(file) + " ";
-		
-						}
-		
-						MakeItSimple.closeInputFile(file);
-						return dates;
-					}else{
-						return "";
-
-					}
-			}
-
-				public  boolean convert(String date) {	// untested by me
-					String[] toConvert = date.split(" ");
-					int val;
-					Integer[] data = new Integer[toConvert.length];
-					for (int i = 0; i < data.length; i++) {
-						val = Integer.parseInt(toConvert[i]);
-						root.insert(val);
-						System.out.println("got "+ val +"");
-					}
-					return true;
-				}
 				/*sets a pointer from the child to the parent, so that the tree can be traversed from leafs to root
 				or bottom to top too.
 				@pram parent node, or this
@@ -533,16 +503,6 @@ public class BtreeNode implements Btree{
 									children[i].updateParentPointer();
 								}
 							}
-						}
-						public boolean insert(String filename) {
-							// TODO Auto-generated method stub
-							
-							String dates=read(filename);
-
-							
-							//places file into an array,
-							convert(dates);
-							return true;
 						}
 						public void printLevelorder() {
 							

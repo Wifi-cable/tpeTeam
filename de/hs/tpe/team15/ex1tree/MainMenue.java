@@ -8,7 +8,6 @@ public class MainMenue {
 			
 			public static void main(String[] args) {
 				tree = init();
-				tree.root=tree;
 				do{
 				}while(execute()!=0);
 			}
@@ -36,7 +35,7 @@ public class MainMenue {
 				Scanner UI = new Scanner(System.in);
 				System.out.print("Please enter the order of the tree: ");
 				int order = UI.nextInt();
-				BtreeNode treeRoot = new BtreeNode(order);
+				Btree treeRoot = new Btree(order);
 				return treeRoot;
 			}
 			
@@ -75,7 +74,7 @@ public class MainMenue {
 				case 7: System.out.println("The Smalest Value is: "+tree.getMin());
 					return 7;
 				case 8: 
-				if (tree.ISempty()){
+				if (tree.isEmpty()){
 					System.out.println("Sorry, the tree is empty");
 				}
 				else{
