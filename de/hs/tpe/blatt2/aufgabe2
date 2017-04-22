@@ -1,0 +1,19 @@
+Aufgabe 2
+
+Wenn wir die Methode public abstract Eis erstellen(String typ) haben, muss die Klasse in der sie gespeichert ist auch
+ Abstrakt sein, denn abstrakte Methoden können nur in abstrakten Klasen stehen, weil man kein object instanzieren kann wenn 
+ die Methoden nicht implementiert sind.
+
+Der Vorteil davon wäre eine weitere Abstraktionsebene, die einem Interface ähnelt, weil man die Klasse zwar als Datentyp nehmen kann, aber kein Object daraus 
+bauen kann. Genau wie ein Interface stellt sie Methodenköpfe  zur verfügung ohne sie zu implementieren.  Anders als ein Interface kann sie 
+allerdings beerbt werden. Das zwingt alle von ihr erbenden Klassen dazu, die Methoden die der abstrakten Oberklasse aufgelistet sind zu implementieren. 
+Das heisst das die Methode public abstract Eis erstellen(String typ) in allen Regionalen unterklassen implementiert werden muss. 
+
+(Alternativ könnte es auch weiterhin die (konkreten) Klassen RegioEis und RegioEisdiele geben, die die jetzt Abstrakte  Eis Klasse beerben,
+ und weitere klassen wie MonnemEis, KoelschEis, HesseEis geben die alle Methoden von RegioEisdiele und RegioEis erben, allerdings
+  jewals eine andere "erstellen" methode haben.  Das würde jedoch nicht dafür sorgen das die Strings beim Bestellvorgang in verschiedenen Dialekten ausgegeben werden.)
+
+Sinnvoll währe es wenn Die jetzt abstrakten Klassen allem Methoden endhalten die sie vorher endhielten, und die Lokalen Klassen die Methoden erben können, 
+Aber die methode "erstellen" zusätzlich als Methodenkopf noch dazu kommt. Diese methode muss dann in allen von Eis erbenden klassen implementiert werden.
+
+In der Main müsste dann um die lokalen Eisdielen anzusprechen.........
