@@ -5,11 +5,6 @@ class Eisdiele extends Eis {
 	public Eisdiele() {
 		// TODO Auto-generated constructor stub
 	}
-	//Eis dummValue= new Eis();
-//	Eisdiele deinBecher= new Eisdiele();
-	//Becher customerOrder;
-
-	//Eisdiele lokal= new Eisdiele();
 	Eis myEis= new Eis();
 	public void bestellen(String typ){	// prepares the ice cream sunday	
 	bestellen();
