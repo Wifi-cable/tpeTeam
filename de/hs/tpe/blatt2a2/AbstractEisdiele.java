@@ -11,14 +11,18 @@ import de.hs.tpe.blatt2.Eis;
  * @author wifi-cable
  *
  */
-public abstract class AbstractEisdiele extends AbstractEis {
+public abstract class AbstractEisdiele  {
 
 	/**
 	 * @param args
 	 */
 	public abstract Eis erstellen(String typ);
+	
+	AbstractEisdiele(){
 	//AbstractEis myEis= new  Eis();
-	AbstractEis myEis;
+	}
+		AbstractEis myEis;
+
 	
 	public void bestellen(String typ){	// prepares the ice cream sunday	
 	bestellen();

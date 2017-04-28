@@ -13,14 +13,14 @@ public class MonnemEis extends AbstractEisdiele {
 
 	void begruessen(){	// outputt method
 		
-		System.out.println("");
+		System.out.println("morsche");
 	
 	}
 	
 @Override
 	void kassieren(){	// outputmethod
 		double kosten= myEis.preis();
-		System.out.println("Des machd noh"+kosten+"eiro bidde.");
+		System.out.println("Des mocht"+kosten+"eiro bidde.");
 	}//des machd noh oi eiro
 @Override
 	void verabschieden(){//output method
@@ -28,7 +28,7 @@ public class MonnemEis extends AbstractEisdiele {
 	}
 @Override
 	void endschuldigen(){	// outputmethod
-		System.out.println("Dud mir leid, des han mir ned");
+		System.out.println("alla schue,des hamer net");
 	}
 }
 
