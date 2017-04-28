@@ -205,7 +205,7 @@ public class BtreeNode{
 		//@pram int level you want to start from, so zero to start at the top.
 				public int height(int level){
 					int levelAdd=level;
-
+					
 					if (isLeaf()==false){
 						int i;
 						for ( i=0;i<maximum;i++){
@@ -254,6 +254,24 @@ public class BtreeNode{
 							}
 						}
 					}//end of intFromString
+				 
+				 protected String getStringFromTree(BtreeNode tree){
+					 String ret = "";
+					 if(tree.ISempty()){
+						 for(int i=0; i<tree.val.length; i++){
+							 ret += val[i];
+						 }
+						 
+					 } else{
+						 for(int i=0; i<tree.children.length;i++){
+							 if(children[i]!=null){
+							 ret += children[i].getStringFromTree(children[i]);
+							 }
+						 }
+					 }
+					 return ret;
+					 
+				 }
 				protected int printPostorder(int index){// call on root.
 					
 					if (index>=maximum){
@@ -264,13 +282,14 @@ public class BtreeNode{
 					else{
 						BtreeNode theParent=this.getParent();
 						if(isLeaf() && (theParent != null)){
-
+							
 							for(int i=0; i<maximum; i++){
 								if(theParent.children[i]!=null){
 								theParent.children[i].nodePrint();
 								}
+								theParent.nodePrint();
 							}
-							theParent.nodePrint();
+							
 						}
 						else{
 							if(children[index]!=null){
@@ -466,7 +485,7 @@ public class BtreeNode{
 								}
 								System.out.println("---------------------------------------------------------------------------------------------");
 								System.out.println("");
-						//	print(1);
+						
 						}
 						public void printPostorder() {
 						
@@ -474,6 +493,7 @@ public class BtreeNode{
 							
 						}
 						public void printInorder() {
+							
 							
 							System.out.println("Not implemented yet...");
 							

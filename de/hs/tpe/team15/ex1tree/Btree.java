@@ -18,6 +18,7 @@ public class Btree {
 	void insert(int value){// wrapper method for BtreeNode insert.
 		root.insert(value);
 	}
+	
 	boolean insert(String filename){// wrapper method for BtreeNode insert.
 			String dates="";//places file into an array,
 			if (MakeItSimple.isFilePresent(filename) == true) {
@@ -25,7 +26,7 @@ public class Btree {
 
 				while (MakeItSimple.isEndOfInputFile(file) == false) {
 
-					dates +=MakeItSimple.readLine(file) + " ";
+					dates +=MakeItSimple.readLine(file) + ";";
 
 				}
 
@@ -38,8 +39,8 @@ public class Btree {
 			}
 	}
 
-		void convert(String date) {	// untested by me
-			String[] toConvert = date.split(" ");
+		void convert(String date) {	
+			String[] toConvert = date.split(";");
 			int val;
 			Integer[] data = new Integer[toConvert.length];
 			for (int i = 0; i < data.length; i++) {
@@ -47,6 +48,19 @@ public class Btree {
 				root.insert(val);
 				System.out.println("got "+ val +"");
 			}
+		}
+		public  Btree clone(BtreeNode Node){
+			Btree neo = new Btree(m);
+			String toInsert = Node.getStringFromTree(Node);
+			neo.convert(toInsert);
+			return neo;
+		}
+		public String getStringFromTree(){
+			return root.getStringFromTree(root);
+		}
+		public void insertTree(Btree T){
+			String toInsert = T.getStringFromTree();
+			this.convert(toInsert);
 		}
 
 	
@@ -60,8 +74,11 @@ public class Btree {
 	
 	// Wrapper methode for Btreenodes height
 	int height(){
+		if(root.ISempty()){
+			return -1;
+		}
 	int level=root.height(0);
-		return level+1;
+		return level;
 	}
 
 	public Integer getMax(){

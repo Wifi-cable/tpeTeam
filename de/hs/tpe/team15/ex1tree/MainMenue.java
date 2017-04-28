@@ -7,7 +7,11 @@ public class MainMenue {
 	static Btree tree;
 			
 			public static void main(String[] args) {
-				tree = init();
+				/*the solution to the interface dilemma. next time build an interface first, than let eclipse complain
+				 * and create an implementation. 
+				 * in the main build this contstruct to house other objects.*/
+			//	Btree name= new BtreeNode(2);// würde funzen wenn Btree ein interface wäre				tree = init();
+				
 				do{
 				}while(execute()!=0);
 			}
@@ -23,6 +27,7 @@ public class MainMenue {
 				System.out.println("Option 7: Find the smalest Value");
 				System.out.println("Option 8: is the tree empty");
 				System.out.println("Option 9: Print the tree");
+				System.out.println("Option 10 clone");
 				System.out.println("Option 0: Exit");
 				Scanner Ui = new Scanner(System.in); 
 				System.out.print("Please enter your chosen Option: ");
@@ -104,7 +109,12 @@ public class MainMenue {
 					}
 					return 9;
 				
-				
+				case 10: 
+					Btree neo ;
+					neo = tree.clone(tree.root);
+					neo.printLevelorder();
+						
+				return 10;
 				
 				case 0: System.out.println("Thank You and good bye");
 					return 0;
@@ -115,4 +125,4 @@ public class MainMenue {
 		
 	}
 
-
+// /home/wifi-cable/Desktop/eclipseWorkspace/TPE/src/de/hs/tpe/team15/ex1tree
