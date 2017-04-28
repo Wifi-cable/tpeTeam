@@ -1,21 +1,19 @@
-package de.hs.tpe.blatt2;
-import java.util.*;
+package de.hs.tpe.blatt2a2;
 
+//import de.hs.tpe.blatt2.Becher;
+//import de.hs.tpe.blatt2.Eisdiele;
 
-public class Eis {
+abstract class AbstractEis {
 
-	public Eis() {
-	
-	}
-
-	public static void main(String[] args) {
-	Eisdiele venzia= new Eisdiele();
-	venzia.bestellen(" ");
-		
-	}
+//
+//	public static void main(String[] args) {
+//	Eisdiele venzia= new Eisdiele();
+//	venzia.bestellen(" ");
+//		
+//	}
 	
 	//fields
-	 String gefaes,Eisbecher,form;
+	String gefaes,Eisbecher,form;
 	double preis;
 	String[]eisSorten;
 	String []extras;
@@ -171,24 +169,24 @@ public class Eis {
 			extras[2]="Kiwisauce";
 				
 		}
-		else{ Eisbecher= "no";
+		else{ 
+			Eisbecher= "no";
 			
 		}
 	
 	}
 	
 		void speisekate(){ //contains the ennums Becher print them all in correct capitalisation prints the menue.
-		
-		for (Becher i: Becher.values()){
-			String becher =i.toString();
-			String be=becher.substring(1);
-			be=be.toLowerCase();
-			be=	becher.charAt(0)+be;
-			
-			System.out.println(be);		
+//		
+//		for (Becher i: Becher.values()){
+//			String becher =i.toString();
+//			String be=becher.substring(1);
+//			be=be.toLowerCase();
+//			be=	becher.charAt(0)+be;
+//			
+//			System.out.println(be);		
 		}
 			
 		
 		}
-	
-}
+

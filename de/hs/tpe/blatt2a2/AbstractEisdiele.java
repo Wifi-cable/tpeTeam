@@ -1,11 +1,25 @@
-package de.hs.tpe.blatt2;
-import java.util.*;
-class Eisdiele extends Eis {
+/**
+ * 
+ */
+package de.hs.tpe.blatt2a2;
 
-	public Eisdiele() {
-		// TODO Auto-generated constructor stub
-	}
-	Eis myEis= new Eis();
+import java.util.Scanner;
+
+import de.hs.tpe.blatt2.Eis;
+
+/**
+ * @author wifi-cable
+ *
+ */
+public abstract class AbstractEisdiele extends AbstractEis {
+
+	/**
+	 * @param args
+	 */
+	public abstract Eis erstellen(String typ);
+	//AbstractEis myEis= new  Eis();
+	AbstractEis myEis;
+	
 	public void bestellen(String typ){	// prepares the ice cream sunday	
 	bestellen();
 	}
@@ -14,7 +28,7 @@ class Eisdiele extends Eis {
 	
 		Scanner input=new Scanner(System.in);
 		System.out.println("wir haben");
-		myEis.speisekate();
+	//	myEis.speisekate();
 		begruessen();
 		String bestellung= input.nextLine();
 		myEis.rezept(bestellung);
