@@ -1,5 +1,7 @@
 package de.hs.tpe.blatt2a2;
 
+import de.hs.tpe.blatt2.Eis;
+
 //import de.hs.tpe.blatt2.Becher;
 //import de.hs.tpe.blatt2.Eisdiele;
 
@@ -39,6 +41,7 @@ abstract class AbstractEis {
 	String []extras(){	
 		return extras;
 	}
+	public abstract Eis erstellen(String typ);
 	//output methods
 	void vorbereiten(){
 	System.out.println("Der Eisverkäufer, säubert den eislöffel und  nimmt "+gefaes+".");
