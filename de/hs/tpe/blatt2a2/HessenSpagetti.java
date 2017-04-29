@@ -1,8 +1,8 @@
 package de.hs.tpe.blatt2a2;
 
-import de.hs.tpe.blatt2.Eis;
+//import de.hs.tpe.blatt2.Eis;
 
-public class HessenSpagetti extends AbstractEis {
+public class HessenSpagetti extends Eis {
 
 	public HessenSpagetti() {
 		// TODO Auto-generated constructor stub
@@ -26,8 +26,8 @@ public class HessenSpagetti extends AbstractEis {
 			this.eisSorten[0]="Vanille";
 			this.extras=new String[3];
 			this.extras[0]="Schlagsahne";
-			this.extras[1]="Erdbeersauce";
-			this.extras[2]="gemalene Mandeln";	
+			this.extras[1]="Himbersauce";
+			this.extras[2]="Cocus flocken";	
 		}
 		else {
 			System.out.println(" this is not spagetti eis");

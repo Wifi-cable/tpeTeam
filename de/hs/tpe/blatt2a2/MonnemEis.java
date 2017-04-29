@@ -1,20 +1,19 @@
 package de.hs.tpe.blatt2a2;
 
-import de.hs.tpe.blatt2.Eis;
+//import de.hs.tpe.blatt2.Eis;
 
-public class MonnemEis extends AbstractEisdiele {
+public class MonnemEis extends Eisdiele {
 
 	@Override
 	public Eis erstellen(String typ) {
-		// TODO Auto-generated method stub
-		return null;
+		//AbstractEis spagetti = new MonnemSpagetti(typ);
+		Eis spagetti =erstellen(typ);
+		return spagetti;
 	}
 	@Override
 
 	void begruessen(){	// outputt method
-		
-		System.out.println("morsche");
-	
+		System.out.println("morsche Mir kenne a Monnemerisch raedde.");
 	}
 	
 @Override
@@ -28,7 +27,7 @@ public class MonnemEis extends AbstractEisdiele {
 	}
 @Override
 	void endschuldigen(){	// outputmethod
-		System.out.println("alla schue,des hamer net");
+		System.out.println("alla schue, des hamer net");
 	}
 }
 

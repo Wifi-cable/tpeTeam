@@ -1,12 +1,12 @@
 package de.hs.tpe.blatt2a2;
 
-import de.hs.tpe.blatt2.Eis;
+//import de.hs.tpe.blatt2.Eis;
 
-public class HessenEis extends AbstractEisdiele {
+public class HessenEis extends Eisdiele {
 
 	@Override
 	public Eis erstellen(String typ) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 @Override
