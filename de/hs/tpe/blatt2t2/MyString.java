@@ -14,4 +14,7 @@ public class MyString {
 		String st=o.getContent();
 		return content.compareTo(st);
 	}
+	public String toString(){
+		return content;
+	}
 }

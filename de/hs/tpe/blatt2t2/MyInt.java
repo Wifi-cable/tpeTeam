@@ -22,5 +22,8 @@ public class MyInt implements Comparable<MyInt> {
 	
 		 return ret;
 	}
+	 public String toString(){
+		return Integer.toString(this.value);
+	}
 
 }
