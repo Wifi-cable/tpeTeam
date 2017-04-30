@@ -4,34 +4,60 @@ import java.util.Arrays;
 import java.util.Scanner;
 	// Sorter class as wanted in the exercise
 public class SortArray {
-	@SuppressWarnings("rawtypes")			// mandatory if comparable is used.
+	
+//	@SuppressWarnings("rawtypes")			// mandatory if comparable is used.
 	public static void main(String[] args) {
-		System.out.println("Bitte wählen Sie ihr Sortierverfahren aus: \n1: BubbleSort\n2: InsertionSort");
+		System.out.println("Bitte wählen Sie ihr SortiertoComparelskdjf[]verfahren aus: \n1: BubbleSort\n2: InsertionSort");
 		Scanner UI = new Scanner(System.in);		// Console menu to choose the Sorting algorithm
 		int Sortierverfahren = UI.nextInt();		
-		Comparable[] toCompare = new Comparable[100];	//random Array to be sorted
-		for(int i=0; i<toCompare.length;i++){
-			toCompare[i] = (int)(Math.random()*i); 
-		}
-		sortArray(toCompare, Sortierverfahren);	// Method to choose the Algorithm with the array should be sorted
+		//Comparable<MyInt> toCompare = new MyInt(2);	//random Array to be sorted
+		Comparable<MyInt> toComp[]=new Comparable [5];
+		toComp[0] = new MyInt(2); 
+		toComp[1] = new MyInt(0); 
+		toComp[2] = new MyInt(5); 
+		toComp[3] = new MyInt(1); 
+		toComp[4] = new MyInt(10); 
+		
+		Comparable[] myStringArray= new Comparable[8];
+		
+		myStringArray[0]=new MyString("zebra ");
+		myStringArray[1]= new MyString("cat ");
+		myStringArray[2]= new MyString("monkey ");
+		myStringArray[3]= new MyString("hamster ");
+		myStringArray[4]= new MyString("bird ");
+		myStringArray[5]= new MyString("parrot ");
+		myStringArray[6]= new MyString("anthilope "); 
+		myStringArray[7]= new MyString("eisbear");
+		
+		
+		
+		//= new MyInt(2);	//random Array to be sorted
+		
+		sortArray(toComp, Sortierverfahren);	// Method to choose the Algorithm with the array should be sorted
+		sortArray(myStringArray, Sortierverfahren);
 		UI.close();
 	}
 
-	@SuppressWarnings("rawtypes")
+	//@SuppressWarnings("rawtypes")
 	public static void sortArray(Comparable[] toSort, int Sortierverfahren){	// Method that chooses the correct algorithm and prints the unsorted and sorted array 
+		System.out.println("prior to sorting");
 		System.out.println(Arrays.toString(toSort));			
 		if(Sortierverfahren==1){
+			System.out.println(" sorted with bubblesort ");
 			System.out.println(Arrays.toString(bubbleSortComparable(toSort)));
-		}else{System.out.println(Arrays.toString(insertionSortComparable(toSort)));
+		
+		}else{
+			System.out.println("after sorting with Insertion sort");
+			System.out.println(Arrays.toString(insertionSortComparable(toSort)));
 		
 		}
 	}
-	@SuppressWarnings({ "rawtypes", "unchecked" })			// BubbleSort with comparable objects instead of integers
-	public static Comparable[] bubbleSortComparable(Comparable[] toSort){
+	//@SuppressWarnings({ "rawtypes", "unchecked" })			// BubbleSort with comparable objects instead of integers
+	public static Comparable<Object>[] bubbleSortComparable(Comparable<Object>[] toSort){
 			for(int i=1; i<toSort.length;i++){
 				for(int j=0; j<toSort.length-i;j++){		// for loops to set the bubbles
 					if(toSort[j].compareTo(toSort[j+1])>0){	// compareTo to check which value is larger
-						Comparable h = toSort[j];			// marker swap block
+						Comparable<Object> h = toSort[j];			// marker swap block
 						toSort[j]=toSort[j+1];
 						toSort[j+1]=h;
 					}
@@ -39,19 +65,33 @@ public class SortArray {
 			}
 			return toSort;
 		}
-	@SuppressWarnings({"rawtypes", "unchecked"})		// InsertionSort with comparable objects instead of integers.
-	public static Comparable[] insertionSortComparable(Comparable[] toSort){
+	//@SuppressWarnings({"rawtypes", "unchecked"})		// InsertionSort with comparable objects instead of integers.
+	public static Comparable<Object>[] insertionSortComparable(Comparable<Object>[] toSort){
 		for (int i = 1; i < toSort.length; i++) {
 			int j = i;
-			Comparable m = toSort[i]; // Marker-field
+			Comparable<Object> m = toSort[i]; 
 			while (j > 0 && toSort[j - 1].compareTo(m)>0) {
-				// move all bigger values to the back
+				
 				toSort[j] = toSort[j - 1];
 				j--;
 			}
-			// appoint m to a free field
+			
 			toSort[j] = m;
 		}
 		return toSort;
 		}
+//	public static void methodname() {
+//		//Erzeugen eines String-Arrays
+//		Comparable<String>[] objects = new Comparable[4];
+//		objects[0]="STRINGS";
+//		objects[1]="SIND";
+//		objects[2]="PAARWEISOE";
+//		objects[3]="VERGLEICHBAR";
+//	
+//		//Sortieren und Ausgeben
+//		bubbleSortComparable(objects);
+//		for (int i = 0; i < objects.length; ++i) {
+//		System.out.println((String)objects[i]);
+//		}
+//		}
 }
