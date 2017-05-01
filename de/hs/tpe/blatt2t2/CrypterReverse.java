@@ -5,7 +5,7 @@ public class CrypterReverse implements Crypter{
 
 	//@Override
 	public String encrypt(String message) {
-		char[] cypher = new char[message.length()];	//creates a char[] the same length as the message;
+		char[] cypher = new char[message.length()];	//creates a char Array the same length as the message;
 		int j=0;
 		for(int i=message.length()-1;i>=0;i--){		// turns the message around
 			cypher[j]=message.charAt(i);
@@ -16,7 +16,7 @@ public class CrypterReverse implements Crypter{
 	}
 
 	//@Override
-	public String decrypt(String cypherText) {		// decrypt works the same as encrypt
+	public String decrypt(String cypherText) {		// decrypt works the same as encrypt, could alternately just call on encrypt
 		char[] clearTextArray = new char[cypherText.length()];
 		int j=0;
 		for(int i=clearTextArray.length-1;i>=0;i--){

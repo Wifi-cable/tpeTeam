@@ -5,7 +5,7 @@ public class InsertoinSort {
 	protected int[] insertionSort(int[] array) {
 		for (int i = 1; i < array.length; i++) {	
 			int j = i;
-			int m = array[i]; // Marker field
+			int m = array[i]; //current index
 			while (j > 0 && array[j - 1] > m) {
 				// push all values bigger than m to the right
 				array[j] = array[j - 1];

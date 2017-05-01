@@ -22,7 +22,7 @@ public class CrypterCaesar implements Crypter {
 		System.out.print("Bitte geben Sie ihren Schlüssel ein: \n");
 		Scanner input = new Scanner(System.in);
 		key = input.nextInt() % 26;
-		//input.close();
+	
 	}
 	// uses the key to shift an alphabet for the ammount of the key.
 	protected void init() {
@@ -51,7 +51,8 @@ public class CrypterCaesar implements Crypter {
 		}
 	}
 	
-	// gets the index of the char in the regular alphabet and puts the char out of the shifted alphabet with teh same inde at the end of the dcrypted string
+	// gets the index of the char in the regular alphabet and puts the char out of the shifted
+	//alphabet with the same index at the end of the dcrypted string
 	public String encrypt(String message) {
 		String cypherText = "";
 		message = message.toUpperCase();
@@ -75,11 +76,11 @@ public class CrypterCaesar implements Crypter {
 	// works like encrypt, but the other way around.
 	public String decrypt(String cypherText) {
 		String message = "";
-		cypherText = cypherText.toUpperCase();
+		
 		for (int i = 0; i < cypherText.length(); i++) {
 			for (int j = 0; j < 26; j++) {
 				try {
-					if (cypherText.charAt(i) == keyAlphabet[j]) {	//the difference to encrypt 
+					if (cypherText.charAt(i) == keyAlphabet[j]) {	//one difference to encrypt 
 						message += Alphabet[j];
 					}
 				} catch (ArrayIndexOutOfBoundsException e) {
@@ -90,6 +91,7 @@ public class CrypterCaesar implements Crypter {
 				}
 			}
 		}
+		message=message.toLowerCase();	// the other difference. 
 		return message;
 	}
 

@@ -5,41 +5,43 @@ import java.util.Scanner;
 	// Sorter class as wanted in the exercise
 public class SortArray {
 	
-//	@SuppressWarnings("rawtypes")			// mandatory if comparable is used.
+
 	public static void main(String[] args) {
+//demo of reverse crypt
 		Crypter reverse=new CrypterReverse();
 		String hi="Hallo Welt!";
 		String ih=reverse.encrypt(hi);
 		System.out.println(reverse.encrypt(hi));
 		System.out.println(reverse.decrypt(ih));
-		
+// crypter caeser demo	
 		Crypter caeser=new CrypterCaesar(5);
-		String blink="blink blink!";
+		String blink="Problem exist between chair and keyboard.";
 		String knilb=caeser.encrypt(blink);
 		System.out.println(caeser.encrypt(blink));
 		System.out.println(caeser.decrypt(knilb));
-
+//decrypting the "geheimbotschaft" proving it works
 		String botschaft="XHMSNYYXYJQQJS";
 		System.out.println("Gehime Botschaft: " + botschaft + " -> " + reverse.decrypt(caeser.decrypt(reverse.decrypt(botschaft))));
+//crypter with user input to get encrypt and decrypt key.
 		Crypter brutus= new CrypterCaesar();
-		System.out.println(brutus.encrypt("abc"));
+		System.out.println(brutus.encrypt("Never trust user data"));
 		
 		
 		System.out.println("Bitte wählen Sie ihr Sortierverfahren aus: \n1: BubbleSort\n2: InsertionSort");
 		Scanner UI = new Scanner(System.in);		// Console menu to choose the Sorting algorithm
 		int Sortierverfahren = UI.nextInt();
 		
-		//Comparable<MyInt> toCompare = new MyInt(2);	//random Array to be sorted
+		//  sample array or type MyInt to sort
 		Comparable<MyInt> toComp[]=new Comparable [5];
-		toComp[0] = new MyInt(2); 
+		toComp[0] = new MyInt(2); // constructor calls
 		toComp[1] = new MyInt(0); 
 		toComp[2] = new MyInt(5); 
 		toComp[3] = new MyInt(1); 
 		toComp[4] = new MyInt(10); 
 		
+		// array of "myString" objects to be sorted
 		Comparable[] myStringArray= new Comparable[8];
-		
-		myStringArray[0]=new MyString("zebra ");
+		myStringArray[0]=new MyString("zebra ");	// constructor calls
 		myStringArray[1]= new MyString("cat ");
 		myStringArray[2]= new MyString("monkey ");
 		myStringArray[3]= new MyString("hamster ");
@@ -47,10 +49,6 @@ public class SortArray {
 		myStringArray[5]= new MyString("parrot ");
 		myStringArray[6]= new MyString("anthilope "); 
 		myStringArray[7]= new MyString("eisbear");
-		
-		
-		
-		//= new MyInt(2);	//random Array to be sorted
 		
 		sortArray(toComp, Sortierverfahren);	// Method to choose the Algorithm with the array should be sorted
 		sortArray(myStringArray, Sortierverfahren);

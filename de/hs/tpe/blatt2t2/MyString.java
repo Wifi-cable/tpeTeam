@@ -1,6 +1,6 @@
 package de.hs.tpe.blatt2t2;
 
-public class MyString {
+public class MyString implements Comparable<MyString>  {
 	String content;
 	public MyString(String text){
 		this.content=text;
