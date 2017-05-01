@@ -3,16 +3,15 @@ package de.hs.tpe.blatt2a2;
 //import de.hs.tpe.blatt2.Eis;
 
 public class MonnemEis extends Eisdiele {
-/* need a field for Eis that is set by erstellen 
- * other methods need to call that one  NOT the superclass field. that causes nullpointers!!!
- * */
+
 Eis dasEis;
 	@Override
 	public Eis erstellen(String typ) {
 		 dasEis = new MonnemSpagetti(typ);
-		//Eis spagetti =bestellen(typ);
+	
 		return dasEis;
 	}
+	// method to budle all helper methods
 	@Override
 	protected void bestellen(String typ) {
 		begruessen();
@@ -48,11 +47,6 @@ Eis dasEis;
 		System.out.println("alla schue, des hamer net.");
 	}
 
-@Override
-Eis realBestellen(String Typ) {
-	
-	return null;
-}
 protected void zubereitung(){ //method to output some strings, mainly to show that supercalss fields have been initiated
 	System.out.println("der Eisverkäufer nimmt "+dasEis.gefaes);
 	System.out.println( "und  "+dasEis.form+" "+dasEis.eisSorten[0]+", "+dasEis.eisSorten[1]+".");

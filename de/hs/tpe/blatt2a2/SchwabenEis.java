@@ -33,7 +33,7 @@ public class SchwabenEis extends Eisdiele {
 	void endschuldigen(){	// outputmethod
 		System.out.println("Dud mir leid, des han mir ned.");
 	}
-
+// collectivly call on all helper methods if the input string is correct
 @Override
 protected void bestellen(String typ) {
 	begruessen();
@@ -50,11 +50,7 @@ protected void bestellen(String typ) {
 	
 }
 
-@Override
-Eis realBestellen(String Typ) {
-	
-	return null;
-}
+ 
 protected void zubereitung(){ //method to output some strings, mainly to show that supercalss fields have been initiated
 	System.out.println("ein "+dasEis.Eisbecher);
 	System.out.println("der Eisverkäufer nimmt "+dasEis.gefaes);

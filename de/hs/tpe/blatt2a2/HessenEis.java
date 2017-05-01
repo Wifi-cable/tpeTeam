@@ -33,6 +33,7 @@ public class HessenEis extends Eisdiele {
 	void endschuldigen(){	// outputmethod
 		System.out.println("dut mer leid, dees ham'mer net!");
 	}
+// method to bundle all other methods
 @Override
 protected void bestellen(String typ) {
 	begruessen();
@@ -47,11 +48,7 @@ protected void bestellen(String typ) {
 	}
 	verabschieden();
 }
-@Override
-Eis realBestellen(String Typ) {
-	// TODO Auto-generated method stub
-	return null;
-}
+
 
 protected void zubereitung(){ //method to output some strings, mainly to show that supercalss fields have been initiated
 	System.out.println("der Eisverkäufer nimmt "+dasEis.gefaes);

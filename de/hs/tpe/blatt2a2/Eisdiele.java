@@ -20,12 +20,9 @@ public abstract class Eisdiele  {
 	}
 		Eis myEis;
 
-	
-//	public Eis bestellen(String typ){	// prepares the ice cream sunday	
-//	bestellen();
-//	}
+//abstract method because every subclass implements it differently
 	protected abstract void bestellen(String typ);
-	abstract Eis realBestellen(String Typ); // practically the most important one
+
 
 
 	
