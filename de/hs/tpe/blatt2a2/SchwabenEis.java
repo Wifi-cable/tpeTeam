@@ -16,7 +16,7 @@ public class SchwabenEis extends Eisdiele {
 
 	void begruessen(){	// outputt method
 		
-		System.out.println("Griass Godd?, was moechda sie beschtella");
+		System.out.println("Griass Godd, was moechda sie beschtella?");
 	
 	}
 	
@@ -27,11 +27,11 @@ public class SchwabenEis extends Eisdiele {
 	}//des machd noh oi eiro
 @Override
 	void verabschieden(){//output method
-		System.out.println("Adele, gudde abbedied");
+		System.out.println("Adele, gudde abbedied.");
 	}
 @Override
 	void endschuldigen(){	// outputmethod
-		System.out.println("Dud mir leid, des han mir ned");
+		System.out.println("Dud mir leid, des han mir ned.");
 	}
 
 @Override
@@ -58,13 +58,13 @@ Eis realBestellen(String Typ) {
 protected void zubereitung(){ //method to output some strings, mainly to show that supercalss fields have been initiated
 	System.out.println("ein "+dasEis.Eisbecher);
 	System.out.println("der Eisverkäufer nimmt "+dasEis.gefaes);
-	System.out.println( "und  "+dasEis.form+" "+dasEis.eisSorten[0]+" ");
+	System.out.println( "und  "+dasEis.form+" "+dasEis.eisSorten[0]+". ");
 	System.out.println("decoriert mit "); 
 	for( String ex:dasEis.extras){
 		String topping=ex;
-		System.out.print(" "+topping);
+		System.out.print(" "+topping+",");
 	}
 	System.out.println(" ");	
-	System.out.println("hier is ihr "+ dasEis.Eisbecher);
+	System.out.println("hier is ihr "+ dasEis.Eisbecher+".");
 }
 }

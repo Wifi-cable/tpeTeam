@@ -41,11 +41,11 @@ Eis dasEis;
 	}//des machd noh oi eiro
 @Override
 	void verabschieden(){//output method
-		System.out.println("Alla gut");
+		System.out.println("Alla gut !");
 	}
 @Override
 	void endschuldigen(){	// outputmethod
-		System.out.println("alla schue, des hamer net");
+		System.out.println("alla schue, des hamer net.");
 	}
 
 @Override
@@ -55,14 +55,14 @@ Eis realBestellen(String Typ) {
 }
 protected void zubereitung(){ //method to output some strings, mainly to show that supercalss fields have been initiated
 	System.out.println("der Eisverkäufer nimmt "+dasEis.gefaes);
-	System.out.println( "und  "+dasEis.form+" "+dasEis.eisSorten[0]+" "+dasEis.eisSorten[1]);
+	System.out.println( "und  "+dasEis.form+" "+dasEis.eisSorten[0]+", "+dasEis.eisSorten[1]+".");
 	System.out.println("decoriert mit "); 
 	for( String ex:dasEis.extras){
 		String topping=ex;
-		System.out.print(" "+topping);
+		System.out.print(" "+topping+",");
 	}
 	System.out.println(" ");	
-	System.out.println("hier ist ihr "+ dasEis.Eisbecher);
+	System.out.println("hier ist ihr "+ dasEis.Eisbecher+". ");
 }
 
 }
