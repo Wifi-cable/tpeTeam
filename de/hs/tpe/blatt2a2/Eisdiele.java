@@ -8,7 +8,12 @@ import java.util.Scanner;
 
 
 /**
- * @author wifi-cable
+ * der vorteil dieser optopm ist das durch verernung genauere und spezifischere unterklassen gebaut werden können. das 
+ * funktioniert so gut wie polimorphismus.  es erlaubt allerdings das die oberklasse von der alle unterklassen erben 
+ * vage bleibt und die details erst später implementiert werden.
+ * 
+ * in der main erlaubt die abstrakte oberklase in schnelles switchen zwischen den unterklassen objecten durch
+ *  dynamsische bindung. 
  *
  */
 public abstract class Eisdiele  {
@@ -45,3 +50,4 @@ public abstract class Eisdiele  {
 	}
 
 }
+
