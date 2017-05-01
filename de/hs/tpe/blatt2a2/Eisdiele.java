@@ -5,7 +5,7 @@ package de.hs.tpe.blatt2a2;
 
 import java.util.Scanner;
 
-//import de.hs.tpe.blatt2.Eis;
+
 
 /**
  * @author wifi-cable
@@ -13,46 +13,40 @@ import java.util.Scanner;
  */
 public abstract class Eisdiele  {
 
-	/**
-	 * @param args
-	 */
 	public abstract Eis erstellen(String typ);
 	
 	Eisdiele(){
-	//AbstractEis myEis= new  Eis();
+
 	}
 		Eis myEis;
 
 	
-	public void bestellen(String typ){	// prepares the ice cream sunday	
-	bestellen();
-	}
-
-	private String bestellen(){// practically the most important one
+//	public Eis bestellen(String typ){	// prepares the ice cream sunday	
+//	bestellen();
+//	}
+	protected abstract void bestellen(String typ);
+	abstract Eis realBestellen(String Typ); // practically the most important one
 	
-		Scanner input=new Scanner(System.in);
-		System.out.println("wir haben");
-	//	myEis.speisekate();
-		begruessen();
-		String bestellung= input.nextLine();
-		myEis.rezept(bestellung);
-		
-		if (myEis.Eisbecher.equals("no")){
-			endschuldigen();
-			}
-		else{
-			myEis.vorbereiten();
-			myEis.fuellen();
-			myEis.dekorieren();
-			kassieren();
-		}
-		verabschieden();
-		
-		input.close();
-	
-	
-		return null;
-	}
+//		Scanner input=new Scanner(System.in);
+//	
+//		begruessen();
+//		myEis=new SpagettiEis("spagetti");
+//		if (myEis.preis==0.0){
+//			endschuldigen();
+//			}
+//		else{
+//			myEis.vorbereiten();
+//			myEis.fuellen();
+//			myEis.dekorieren();
+//			kassieren();
+//		}
+//		verabschieden();
+//		
+//		input.close();
+//	
+//	
+//		return myEis;
+//	}
 	
 //	private boolean isValid(String order){
 //		order=order.toLowerCase();
@@ -76,7 +70,7 @@ public abstract class Eisdiele  {
 	
 
 	void kassieren(){	// outputmethod
-		double kosten= myEis.preis();
+		double kosten= myEis.preis;
 		System.out.println("Das macht"+kosten+"€ bitte.");
 	}
 	void verabschieden(){//output method

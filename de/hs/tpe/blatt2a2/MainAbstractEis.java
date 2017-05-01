@@ -6,8 +6,10 @@ public class MainAbstractEis {
 
 	public static void main(String[] args) {
 		Eisdiele adria= new MonnemEis();
-	Eis meinEis=adria.erstellen("SPAGETTIEIS");	// statischer typ ist  Eis. dynamischer sollte  monnemspageti sein
-	System.out.println(meinEis.Eisbecher); 
+		adria.bestellen("SPAGETTIEIS");
+	//Eis meinEis=adria.bestellen("SPAGETTIEIS");	// statischer typ ist  Eis. dynamischer sollte  monnemspageti sein
+	
+	//System.out.println(meinEis.Eisbecher); 
 	}
 
 }
