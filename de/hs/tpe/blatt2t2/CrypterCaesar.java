@@ -1,17 +1,28 @@
 package de.hs.tpe.blatt2t2;
 
 import java.util.Scanner;
+
+
 	// Ceaser Chiffre
-public class CrypterCaesar implements Crypter {
+public class CrypterCaesar implements Crypter {	
+	// constructor with parameters to choose the decrypt and encrypt key.
+	CrypterCaesar(int key){
+		quickInit(key);
+	}
+	//second constructor to get key from user
+	CrypterCaesar(){
+		init();
+	}
+	
 	private char[] Alphabet = new char[52];
 	private char[] keyAlphabet = new char[26];
 	private int key;
 // asks the user to enter a Key via the console
 	private void getKey() {//make sure key is bigger than 0! never trust user data
 		System.out.print("Bitte geben Sie ihren Schlüssel ein: \n");
-		Scanner UI = new Scanner(System.in);
-		key = UI.nextInt() % 26;
-		UI.close();
+		Scanner input = new Scanner(System.in);
+		key = input.nextInt() % 26;
+		//input.close();
 	}
 	// uses the key to shift an alphabet for the ammount of the key.
 	protected void init() {

@@ -7,9 +7,28 @@ public class SortArray {
 	
 //	@SuppressWarnings("rawtypes")			// mandatory if comparable is used.
 	public static void main(String[] args) {
-		System.out.println("Bitte wählen Sie ihr SortiertoComparelskdjf[]verfahren aus: \n1: BubbleSort\n2: InsertionSort");
+		Crypter reverse=new CrypterReverse();
+		String hi="Hallo Welt!";
+		String ih=reverse.encrypt(hi);
+		System.out.println(reverse.encrypt(hi));
+		System.out.println(reverse.decrypt(ih));
+		
+		Crypter caeser=new CrypterCaesar(5);
+		String blink="blink blink!";
+		String knilb=caeser.encrypt(blink);
+		System.out.println(caeser.encrypt(blink));
+		System.out.println(caeser.decrypt(knilb));
+
+		String botschaft="XHMSNYYXYJQQJS";
+		System.out.println("Gehime Botschaft: " + botschaft + " -> " + reverse.decrypt(caeser.decrypt(reverse.decrypt(botschaft))));
+		Crypter brutus= new CrypterCaesar();
+		System.out.println(brutus.encrypt("abc"));
+		
+		
+		System.out.println("Bitte wählen Sie ihr Sortierverfahren aus: \n1: BubbleSort\n2: InsertionSort");
 		Scanner UI = new Scanner(System.in);		// Console menu to choose the Sorting algorithm
-		int Sortierverfahren = UI.nextInt();		
+		int Sortierverfahren = UI.nextInt();
+		
 		//Comparable<MyInt> toCompare = new MyInt(2);	//random Array to be sorted
 		Comparable<MyInt> toComp[]=new Comparable [5];
 		toComp[0] = new MyInt(2); 
@@ -80,18 +99,5 @@ public class SortArray {
 		}
 		return toSort;
 		}
-//	public static void methodname() {
-//		//Erzeugen eines String-Arrays
-//		Comparable<String>[] objects = new Comparable[4];
-//		objects[0]="STRINGS";
-//		objects[1]="SIND";
-//		objects[2]="PAARWEISOE";
-//		objects[3]="VERGLEICHBAR";
-//	
-//		//Sortieren und Ausgeben
-//		bubbleSortComparable(objects);
-//		for (int i = 0; i < objects.length; ++i) {
-//		System.out.println((String)objects[i]);
-//		}
-//		}
+
 }
