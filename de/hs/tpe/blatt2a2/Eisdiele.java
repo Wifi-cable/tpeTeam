@@ -26,40 +26,7 @@ public abstract class Eisdiele  {
 //	}
 	protected abstract void bestellen(String typ);
 	abstract Eis realBestellen(String Typ); // practically the most important one
-	
-//		Scanner input=new Scanner(System.in);
-//	
-//		begruessen();
-//		myEis=new SpagettiEis("spagetti");
-//		if (myEis.preis==0.0){
-//			endschuldigen();
-//			}
-//		else{
-//			myEis.vorbereiten();
-//			myEis.fuellen();
-//			myEis.dekorieren();
-//			kassieren();
-//		}
-//		verabschieden();
-//		
-//		input.close();
-//	
-//	
-//		return myEis;
-//	}
-	
-//	private boolean isValid(String order){
-//		order=order.toLowerCase();
-//		boolean ret=false;
-//		for (Becher i: Becher.values()){
-//			String becher =i.toString();
-//			becher=becher.toLowerCase();
-//			if (becher==order){
-//				ret=true;
-//			}
-//		}
-//		return ret;
-//	}
+
 
 	
 	void begruessen(){	// outputt method

@@ -4,10 +4,13 @@ package de.hs.tpe.blatt2a2;
 
 public class HessenEis extends Eisdiele {
 
+	Eis dasEis;
 	@Override
 	public Eis erstellen(String typ) {
+		 dasEis = new HessenSpagetti(typ);
+			//Eis spagetti =bestellen(typ);
+			return dasEis;
 		
-		return null;
 	}
 @Override
 
@@ -19,7 +22,7 @@ public class HessenEis extends Eisdiele {
 	
 @Override
 	void kassieren(){	// outputmethod
-		double kosten= myEis.preis();
+		double kosten= dasEis.preis;
 		System.out.println("Des macht denn"+kosten+"€ bidde.");
 	}
 @Override
@@ -30,6 +33,36 @@ public class HessenEis extends Eisdiele {
 	void endschuldigen(){	// outputmethod
 		System.out.println("dut mer leid, dees ham'mer net");
 	}
+@Override
+protected void bestellen(String typ) {
+	begruessen();
+	Eis e=erstellen(typ);
+	if(e.preis==0){
+		endschuldigen();
+	}
+	else{
+		zubereitung();
+		kassieren();
+		
+	}
+	verabschieden();
+}
+@Override
+Eis realBestellen(String Typ) {
+	// TODO Auto-generated method stub
+	return null;
+}
 
+protected void zubereitung(){ //method to output some strings, mainly to show that supercalss fields have been initiated
+	System.out.println("der Eisverkäufer nimmt "+dasEis.gefaes);
+	System.out.println( "und  "+dasEis.form+" "+dasEis.eisSorten[0]+" ");
+	System.out.println("decoriert mit "); 
+	for( String ex:dasEis.extras){
+		String topping=ex;
+		System.out.print(" "+topping);
+	}
+	System.out.println(" ");	
+	System.out.println("hier is ihr "+ dasEis.Eisbecher);
+}
 
 }
