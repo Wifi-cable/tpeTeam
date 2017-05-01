@@ -5,14 +5,19 @@ package de.hs.tpe.blatt2a2;
 public class MainAbstractEis {
 
 	public static void main(String[] args) {
-		Eisdiele adria= new MonnemEis();
-		adria.bestellen("SPAGETTIEIS");
+		System.out.println("In Mannheim");
+		Eisdiele Adria= new MonnemEis();
+		Adria.bestellen("SPAGETTIEIS");
+		System.out.println(" ");
 		
+		System.out.println("Irgendwo in Hessen");
 		Eisdiele Venezia= new HessenEis();
 		Venezia.bestellen("SPAGETTIEIS");
-	//Eis meinEis=adria.bestellen("SPAGETTIEIS");	// statischer typ ist  Eis. dynamischer sollte  monnemspageti sein
-	
-	//System.out.println(meinEis.Eis"SPAGETTIEIS"becher); 
+		System.out.println(" ");
+		
+		System.out.println("im Laendle");
+		Eisdiele Dolomiti=new SchwabenEis();
+		Dolomiti.bestellen("SPAGETTIEIS");
 	}
 
 }
