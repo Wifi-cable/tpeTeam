@@ -10,6 +10,7 @@ package myutil;
 public class LinkedList {
 	int size;
 	Node head;
+	Node last;
 // >>>>>>>>>> constructors <<<<<<<<<<<<<<<
 
 		public LinkedList() {
@@ -24,7 +25,9 @@ public class LinkedList {
 
 			// inserts val at a new element at tail of the list
 			// element is created inside method addFirst
-
+			
+			//needs to know if object == string or object
+			
 			if (head == null)
 				head = new Node(val, null);
 			else {
@@ -63,24 +66,55 @@ public class LinkedList {
 			else
 				return null;
 		}
+		
+		public Object getLast(){
+			Node current= head;
+			while(current.getNext()!=null){
+				current=current.getNext();
+			}
+			last=current;
+			return last;
+		}
+		public void backWardprint(){
+			Node current= (Node) this.getLast();
+			int index=this.size();
+			while ((index>0)&&current!=head){
+				Node toPrint=current;
+				
+				for (int i=0 ; i<index ;i++){
+					//System.out.println("from zero to " +index);
+					if (toPrint.getNext()!=null){
+					toPrint=toPrint.getNext();
+					}
+				//ok and where do i do something with current? such as decrese it? 	
+				}
+				System.out.print(toPrint.toString());
+				index--;
+			}
+		// heas is "!!"
+			System.out.print(head.toString()+" ");
+		}
 
 		public int printList() { // returns no. of printed elements
 
-			Node p = head;
-			int cnt = 0;
-			int noe = this.size();
+			Node nodePointer = head;
+			int count = 0;
+			int numberOfElements = this.size();
 			
-			if (noe == 0) return 0; // nothing to print
+			if (numberOfElements == 0){ 
+				System.out.println("number of elements==0");
+				return 0;
+				} // nothing to print
 
-			while (cnt < noe - 1) { // print all elements but last
-				System.out.print(p + ", ");
-				p = p.getNext();
-				cnt++;
+			while (count < numberOfElements - 1) { // print all elements but last
+				System.out.print(nodePointer + ", ");
+				nodePointer = nodePointer.getNext();
+				count++;
 			}
 		
-			System.out.println(p); // print last element
+			System.out.println(nodePointer); // print last element
 
-			return noe;
+			return numberOfElements;
 
 		}
 
@@ -97,6 +131,7 @@ public class LinkedList {
 			return cnt;
 
 		}
+	
 	}
 
 	// ////////////end of list class ///////////////////////////////////////
